@@ -2,68 +2,75 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inscrição - Projeto Rede.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <div class="hero">
-    <div class="container">
-      <h1>Bem-vindos ao Frequência Aberta academy Rede.com</h1>
-      <p>Junte-se a nós e faça parte de um projeto inovador que conecta pessoas ao futuro!</p>
-      <a href="#formulario" class="btn-primary">Inscreva-se Agora</a>
+  <div class="container">
+    <h2>INSCRIÇÕES FREQUÊNCIA ABERTA ACADEMY</h2>
+
+    <form id="formulario" action="https://formsubmit.co/frequenciaaberta.rpc@gmail.com" method="POST" onsubmit="return mostrarSucesso();">
+      <div class="form-group">
+        <label for="nome">Nome completo:</label>
+        <input type="text" id="nome" name="nome_completo" required>
+      </div>
+
+      <div class="form-group">
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" name="idade" required>
+      </div>
+
+      <div class="form-group">
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" name="cidade" required>
+      </div>
+
+      <div class="form-group">
+        <label for="bairro">Bairro:</label>
+        <input type="text" id="bairro" name="bairro" required>
+      </div>
+
+      <div class="form-group">
+        <label for="whatsapp">WhatsApp:</label>
+        <input type="text" id="whatsapp" name="whatsapp" placeholder="(DD) 9 1234-5678" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="link_video">Grave um vídeo respondendo, por que você quer participar?</label>
+        <input type="url" id="link_video" name="link_video" placeholder="https://drive.google.com/..." required>
+      </div>
+
+      <!-- FormSubmit config -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://inscricoesfrequencia.netlify.app/sucesso.html"> <!-- Redirecionamento correto -->
+      <input type="hidden" name="_subject" value="Nova inscrição - Frequência Aberta Academy">
+
+      <button type="submit">Enviar inscrição</button>
+    </form>
+
+    <!-- Mensagem de sucesso -->
+    <div id="mensagem-sucesso" class="success-message" style="display: none;">
+      <h3>✅ Inscrição enviada com sucesso!</h3>
+      <p>Obrigado por se inscrever no projeto Rede.com.<br>Desejamos boa sorte! 🍀</p>
+      <a href="https://www.instagram.com/redepontocom?igsh=YnN4N3QwbDhreXJv" target="_blank">Conheça nosso Instagram @redepontocom</a>
     </div>
   </div>
 
-  <div class="form-section" id="formulario">
-    <div class="container">
-      <h2>Inscrições</h2>
-      <form action="enviar.php" method="POST">
-        <div class="form-group">
-          <label for="nome">Nome completo:</label>
-          <input type="text" id="nome" name="nome_completo" required>
-        </div>
-
-        <div class="form-group">
-          <label for="idade">Idade:</label>
-          <input type="number" id="idade" name="idade" required>
-        </div>
-
-        <div class="form-group">
-          <label for="cidade">Cidade:</label>
-          <input type="text" id="cidade" name="cidade" required>
-        </div>
-
-        <div class="form-group">
-          <label for="bairro">Bairro:</label>
-          <input type="text" id="bairro" name="bairro" required>
-        </div>
-
-        <div class="form-group">
-          <label for="whatsapp">WhatsApp:</label>
-          <input type="text" id="whatsapp" name="whatsapp" placeholder="(DD) 9 1234-5678" required>
-        </div>
-
-        <div class="form-group">
-          <label for="email">E-mail:</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-
-        <div class="form-group">
-          <label for="link_video">Grave um vídeo respondendo: Por que você quer participar?</label>
-          <input type="url" id="link_video" name="link_video" placeholder="https://drive.google.com/..." required>
-        </div>
-
-        <button type="submit" class="btn-submit">Enviar inscrição</button>
-      </form>
-    </div>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 Rede.com - Todos os direitos reservados</p>
-  </footer>
+  <script>
+    function mostrarSucesso() {
+      // Exibe a mensagem de sucesso e oculta o formulário
+      document.getElementById("formulario").style.display = "none";
+      document.getElementById("mensagem-sucesso").style.display = "block";
+      return true; // Continua com o envio do formulário
+    }
+  </script>
 
 </body>
 </html>

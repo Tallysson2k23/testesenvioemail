@@ -1,162 +1,89 @@
-/* Reset básico */
-* {
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f0f4ff;
-    color: #333;
-    line-height: 1.6;
-  }
-  
-  a {
-    text-decoration: none;
-  }
-  
-  /* HERO */
-  .hero {
-    background: url('https://cdn.pixabay.com/photo/2017/06/30/18/53/technology-2456820_960_720.jpg') no-repeat center center/cover;
-    color: #fff;
-    text-align: center;
-    padding: 100px 20px;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
+    color: #333;
   }
   
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 45, 120, 0.85); /* fundo azul escuro semitransparente */
-    z-index: 0;
-  }
-  
-  .hero .container {
-    position: relative;
-    z-index: 1;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  
-  .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
-  }
-  
-  .hero p {
-    font-size: 1.3rem;
-    margin-bottom: 30px;
-    color: #e6f0ff;
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
-  }
-  
-  .hero .btn-primary {
-    background-color: #00aaff;
-    color: #fff;
-    padding: 14px 28px;
-    border-radius: 6px;
-    font-size: 1.1rem;
-    transition: 0.3s ease;
-  }
-  
-  .hero .btn-primary:hover {
-    background-color: #0088cc;
-    transform: translateY(-3px);
-  }
-  
-  /* FORMULÁRIO */
-  .form-section {
-    background-color: #ffffff;
-    padding: 60px 20px;
-    margin-top: -40px;
-  }
-  
-  .form-section h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: #0050a5;
-  }
-  
-  form {
-    max-width: 600px;
-    margin: 0 auto;
-    background: #f9fbff;
+  .container {
+    background: #fff;
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 600px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #0072ff;
   }
   
   .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
   
-  .form-group label {
+  label {
     display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: #333;
+    margin-bottom: 5px;
+    font-weight: 500;
   }
   
-  .form-group input,
-  .form-group textarea {
+  input {
     width: 100%;
-    padding: 12px;
-    border-radius: 6px;
+    padding: 10px;
     border: 1px solid #ccc;
-    font-size: 1rem;
-    background-color: #f0f6ff;
-    transition: border-color 0.3s;
+    border-radius: 6px;
   }
   
-  .form-group input:focus,
-  .form-group textarea:focus {
-    border-color: #007bff;
-    outline: none;
-  }
-  
-  .btn-submit {
-    width: 100%;
+  button {
     background-color: #0072ff;
-    color: white;
-    padding: 14px;
-    font-size: 1.1rem;
+    color: #fff;
+    padding: 12px 18px;
     border: none;
     border-radius: 6px;
     cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
     transition: background-color 0.3s;
   }
   
-  .btn-submit:hover {
+  button:hover {
     background-color: #005ec4;
   }
   
-  /* FOOTER */
-  footer {
+  .success-message {
+    display: none;
     text-align: center;
-    padding: 20px;
-    background-color: #e8f0ff;
-    color: #555;
-    font-size: 0.9rem;
-    margin-top: 60px;
+    animation: fadeIn 0.8s ease-in-out;
   }
   
-  /* Responsivo */
-  @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 2.2rem;
-    }
+  .success-message.active {
+    display: block;
+  }
   
-    .hero p {
-      font-size: 1.1rem;
-    }
+  .success-message h3 {
+    color: #28a745;
+    margin-bottom: 10px;
+  }
   
-    form {
-      padding: 20px;
-    }
+  .success-message a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #0072ff;
+    font-weight: 500;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
   }
   
