@@ -1,89 +1,116 @@
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to right, #00c6ff, #0072ff);
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    color: #333;
+    padding: 40px 20px;
   }
   
   .container {
-    background: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    width: 100%;
+    background-color: rgba(255, 255, 255, 0.06); /* leve transparência sem desfoque */
+    /* REMOVIDO: backdrop-filter: blur(10px); */
+    padding: 40px 30px;
+    border-radius: 20px;
     max-width: 600px;
-    animation: fadeIn 1s ease-in-out;
+    width: 100%;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .container:hover {
+    transform: scale(1.01);
   }
   
   h2 {
     text-align: center;
-    margin-bottom: 25px;
-    color: #0072ff;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #f7f7f7;
   }
   
   .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
   
   label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: 500;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #e0e0e0;
   }
   
-  input {
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="url"] {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-  }
-  
-  button {
-    background-color: #0072ff;
-    color: #fff;
-    padding: 12px 18px;
+    padding: 12px;
     border: none;
-    border-radius: 6px;
-    cursor: pointer;
+    border-radius: 10px;
+    outline: none;
+    background-color: #ffffff20;
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  input::placeholder {
+    color: #ccc;
+  }
+  
+  input:focus {
+    background-color: #ffffff30;
+    border: 1px solid #00d9ff;
+  }
+  
+  button[type="submit"] {
     width: 100%;
-    font-size: 1rem;
-    transition: background-color 0.3s;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #00d9ff, #0078ff);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    margin-top: 10px;
   }
   
   button:hover {
-    background-color: #005ec4;
+    background: linear-gradient(135deg, #0078ff, #00d9ff);
   }
   
   .success-message {
-    display: none;
     text-align: center;
-    animation: fadeIn 0.8s ease-in-out;
-  }
-  
-  .success-message.active {
-    display: block;
-  }
-  
-  .success-message h3 {
-    color: #28a745;
-    margin-bottom: 10px;
+    padding: 20px;
+    background-color: #28a74550;
+    border-radius: 15px;
+    color: #d4edda;
+    font-weight: 500;
+    animation: fadeIn 1s ease-in-out;
   }
   
   .success-message a {
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 15px;
     text-decoration: none;
-    color: #0072ff;
-    font-weight: 500;
+    color: #00c6ff;
+    font-weight: bold;
   }
   
   @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(30px); }
+    from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
   }
   
