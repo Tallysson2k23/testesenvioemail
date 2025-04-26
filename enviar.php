@@ -1,24 +1,33 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nome = htmlspecialchars($_POST['nome']);
-    $idade = htmlspecialchars($_POST['idade']);
-    $endereco = htmlspecialchars($_POST['endereco']);
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-    // E-mail de destino
-    $destinatario = "frequenciaaberta.rpc@gmail.com";  // <-- altere para seu e-mail real
-    $assunto = "Novo formulário recebido";
+require 'vendor/autoload.php';
 
-    $mensagem = "Novo formulário enviado:\n\n";
-    $mensagem .= "Nome: $nome\n";
-    $mensagem .= "Idade: $idade\n";
-    $mensagem .= "Endereço: $endereco\n";
+$mail = new PHPMailer(true);
 
-    $headers = "From: formulario@seudominio.com"; // Opcional: ajuste se tiver domínio próprio
+try {
+    // Configurações do servidor SMTP
+    $mail->isSMTP();
+    $mail->Host       = 'smtp.gmail.com'; // Servidor SMTP
+    $mail->SMTPAuth   = true;
+    $mail->Username   = 'frequenciaaberta.rpc@gmail.com'; // Seu e-mail
+    $mail->Password   = 'wpkv yjmd stzg pkgv';   // Sua senha ou App Password
+    $mail->SMTPSecure = 'tls';
+    $mail->Port       = 587;
 
-    if (mail($destinatario, $assunto, $mensagem, $headers)) {
-        echo "Formulário enviado com sucesso!";
-    } else {
-        echo "Erro ao enviar o formulário.";
-    }
+    // Remetente e destinatário
+    $mail->setFrom('seuemail@gmail.com', 'Seu Nome');
+    $mail->addAddress('destinatario@exemplo.com', 'Nome do Destinatário');
+
+    // Conteúdo do e-mail
+    $mail->isHTML(true);
+    $mail->Subject = 'Assunto do E-mail';
+    $mail->Body    = '<b>Mensagem em HTML</b>';
+    $mail->AltBody = 'Mensagem em texto puro';
+
+    $mail->send();
+    echo 'E-mail enviado com sucesso!';
+} catch (Exception $e) {
+    echo "Erro ao enviar e-mail: {$mail->ErrorInfo}";
 }
-?>
