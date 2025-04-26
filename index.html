@@ -12,7 +12,7 @@
   <div class="hero">
     <div class="container">
       <h1>Bem-vindos ao Frequência Aberta academy Rede.com</h1>
-      <p>Junte-se a nós e faça parte de um projeto inovador que conecta pessoas ou futuro!</p>
+      <p>Junte-se a nós e faça parte de um projeto inovador que conecta pessoas ao futuro!</p>
       <a href="#formulario" class="btn-primary">Inscreva-se Agora</a>
     </div>
   </div>
@@ -20,7 +20,7 @@
   <div class="form-section" id="formulario">
     <div class="container">
       <h2>Inscrições</h2>
-      <form action="https://formsubmit.co/frequenciaaberta.rpc@gmail.com" method="POST">
+      <form action="enviar.php" method="POST">
         <div class="form-group">
           <label for="nome">Nome completo:</label>
           <input type="text" id="nome" name="nome_completo" required>
@@ -56,9 +56,6 @@
           <input type="url" id="link_video" name="link_video" placeholder="https://drive.google.com/..." required>
         </div>
 
-        <!-- FormSubmit config -->
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="sucesso.html">
         <button type="submit" class="btn-submit">Enviar inscrição</button>
       </form>
     </div>
