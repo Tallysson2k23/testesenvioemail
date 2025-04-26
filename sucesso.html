@@ -4,27 +4,30 @@
   <meta charset="UTF-8">
   <title>Inscrição Realizada</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Adicionando o FontAwesome para os ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #00c6ff, #0072ff);
+      background: url('https://www.w3schools.com/w3images/abstract.jpg') no-repeat center center fixed; /* Exemplo de imagem de fundo, substitua conforme necessário */
+      background-size: cover;
       margin: 0;
       padding: 0;
       color: #333;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
+      height: 100vh;
       text-align: center;
     }
 
     .box {
-      background: #fff;
+      background: rgba(255, 255, 255, 0.8); /* Fundo branco com opacidade */
       padding: 40px;
       border-radius: 12px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.2);
       animation: fadeIn 1s ease-in-out;
-      max-width: 600px;
+      max-width: 500px;
     }
 
     h1 {
@@ -45,25 +48,18 @@
       border-radius: 8px;
       text-decoration: none;
       font-weight: 500;
-      margin-top: 10px;
+      transition: background-color 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    a i {
+      margin-right: 10px; /* Espaço entre o ícone e o texto */
     }
 
     a:hover {
       background-color: #005ec4;
-    }
-
-    .imagens {
-      margin-top: 30px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 15px;
-    }
-
-    .imagens img {
-      width: 100%;
-      border-radius: 8px;
-      object-fit: cover;
-      height: 100px;
     }
 
     @keyframes fadeIn {
@@ -78,15 +74,10 @@
     <h1>✅ Obrigado pela sua inscrição!</h1>
     <p>Ficamos felizes por você querer fazer parte do Projeto Rede.com.</p>
     <p>Boa sorte! Em breve entraremos em contato. 💙</p>
+    <!-- Link para o Instagram com ícone -->
     <a href="https://www.instagram.com/redepontocom?igsh=YnN4N3QwbDhreXJv" target="_blank">
-      Conheça nosso Instagram @redepontocom
+      <i class="fab fa-instagram"></i> Conheça nosso Instagram @redepontocom
     </a>
-
-    <div class="imagens">
-      <img src="https://via.placeholder.com/300x200?text=Rede.com+1" alt="Imagem da Rede.com">
-      <img src="https://via.placeholder.com/300x200?text=Rede.com+2" alt="Imagem da Rede.com">
-      <img src="https://via.placeholder.com/300x200?text=Rede.com+3" alt="Imagem da Rede.com">
-    </div>
   </div>
 
 </body>
