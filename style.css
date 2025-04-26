@@ -10,20 +10,19 @@
     background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
     color: #fff;
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .container {
-    background-color: rgba(255, 255, 255, 0.06); /* leve transparência sem desfoque */
-    /* REMOVIDO: backdrop-filter: blur(10px); */
+    background-color: rgba(255, 255, 255, 0.06);
     padding: 40px 30px;
     border-radius: 20px;
     max-width: 600px;
     width: 100%;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease-in-out;
   }
   
@@ -118,6 +117,7 @@
     text-align: center;
     margin-bottom: 60px;
     padding: 40px 20px;
+    width: 100%;
     max-width: 800px;
     animation: fadeIn 1s ease-in-out;
   }
@@ -156,5 +156,50 @@
   
   html {
     scroll-behavior: smooth;
+  }
+  
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 28px;
+    }
+  
+    .hero p {
+      font-size: 16px;
+    }
+  
+    .container {
+      padding: 30px 20px;
+    }
+  
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="url"],
+    button[type="submit"] {
+      font-size: 14px;
+    }
+  
+    .cta-button {
+      padding: 12px 20px;
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero h1 {
+      font-size: 24px;
+    }
+  
+    .hero p {
+      font-size: 14px;
+    }
+  
+    .container {
+      padding: 20px 15px;
+    }
+  
+    h2 {
+      font-size: 22px;
+    }
   }
   
