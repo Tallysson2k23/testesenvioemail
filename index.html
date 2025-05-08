@@ -35,7 +35,7 @@
   <main class="container">
     <h2>INSCRIÇÕES FREQUÊNCIA ABERTA ACADEMY</h2>
 
-   <!-- <form id="formulario" action="https://formsubmit.co/frequenciaaberta.rpc@gmail.com" method="POST" onsubmit="return mostrarSucesso();"> -->
+    <form id="formulario" action="https://formsubmit.co/frequenciaaberta.rpc@gmail.com" method="POST" onsubmit="return mostrarSucesso();">
       <div class="form-group">
         <label for="nome">Nome completo:</label>
         <input type="text" id="nome" name="nome_completo" required>
@@ -85,9 +85,9 @@
         <input type="url" id="link_video" name="link_video" placeholder="https://drive.google.com/..." required>
       </div>
 
-      <!--  <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_next" value="https://inscricoesfrequencia.netlify.app/sucesso.html">
-      <input type="hidden" name="_subject" value="Nova inscrição - Frequência Aberta Academy"> -->
+      <input type="hidden" name="_subject" value="Nova inscrição - Frequência Aberta Academy">
 
       <button type="submit">Enviar inscrição</button>
     </form>
@@ -96,15 +96,15 @@
       <h3>✅ Inscrição enviada com sucesso!</h3>
       <p>Obrigado por se inscrever no projeto Rede.com.<br>Desejamos boa sorte! 🍀</p>
       <a href="https://www.instagram.com/redepontocom?igsh=YnN4N3QwbDhreXJv" target="_blank">Conheça nosso Instagram @redepontocom</a>
-    </div> 
+    </div>
   </main>
 
-<script>
+  <script>
     function mostrarSucesso() {
       document.getElementById("formulario").style.display = "none";
       document.getElementById("mensagem-sucesso").style.display = "block";
       return true;
     }
-  </script> 
+  </script>
 </body>
 </html>
